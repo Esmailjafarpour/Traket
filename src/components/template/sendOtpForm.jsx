@@ -1,5 +1,6 @@
 import React from "react";
 import { sendOtp } from "services/auth";
+import styles from "./sendOtpForm.module.css";
 
 const SendOtpForm = ({ mobile, setMobile, setStep }) => {
   const submitHandler = async (event) => {
@@ -11,7 +12,7 @@ const SendOtpForm = ({ mobile, setMobile, setStep }) => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler} className={styles.form}>
       <p>ورود به حساب کاربری</p>
       <span>
         برای استفاده از امکانات تراکت،لطفا شماره موبایل خود را وارد کنید، که کد
@@ -25,7 +26,7 @@ const SendOtpForm = ({ mobile, setMobile, setStep }) => {
         value={mobile}
         onChange={(e) => setMobile(e.target.value)}
       />
-      <button type="submit">ارسال کد</button>
+      <button type="submit">ارسال کد  تایید</button>
     </form>
   );
 };
