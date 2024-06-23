@@ -1,0 +1,32 @@
+.list{
+     margin : 50px 0 70px;
+}
+
+.list div{
+     display: flex;
+     margin: 20px 0;
+     padding: 15px;
+     border: 2px solid #eaeaea;
+     border-radius: 5px;
+}
+
+.list h5{
+     width: 80%;
+     margin-right: 10px;
+     font-size: 0.9rem;
+     display: flex;
+     align-items: center;
+}
+
+.list p{
+     width: 20%;
+     text-align: left;
+     color: #a62626;
+      padding: 15px;
+     border: 2px solid #eaeaea;
+     border-radius: 5px;
+}
+
+.list .delete{
+     margin:  0 10px;
+}
