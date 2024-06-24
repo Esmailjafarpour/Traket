@@ -1,9 +1,8 @@
-import React from 'react';
-
+import AddPost from "components/template/AddPost";
 const DashboardPage = () => {
      return (
           <div>
-             DashboardPage  
+             <AddPost/>
           </div>
      );
 }
