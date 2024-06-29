@@ -3,17 +3,19 @@ import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { getCategory } from "services/admin";
 import { getCookie } from "utils/cookie";
+import toast from "react-hot-toast";
 import styles from "components/template/addPost.module.css";
 const AddPost = () => {
   const [form, setForm] = useState({
     title: "",
     content: "",
-    category:"",
+    category: "",
     city: "",
     amount: null,
     images: null,
   });
   const { data } = useQuery(["get-categories"], getCategory);
+  const baseUrl = import.meta.env.VITE_BASE_URL;
 
   const changeHandler = (event) => {
     const name = event.target.name;
@@ -33,20 +35,23 @@ const AddPost = () => {
   const addHandler = (event) => {
     event.preventDefault();
     const formData = new FormData();
-    console.log("form",form);
+    console.log("form", form);
     for (let i in form) {
       formData.append(i, form[i]);
     }
 
-    console.log("formData",formData);
+    console.log("formData", formData);
     const token = getCookie("accessToken");
     // console.log("token",token);
-    axios.post(`${import.meta.env.VITE_BASE_URL}post/create`, formData, {
+    axios
+      .post(`${baseUrl}post/create`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
-          Authorization: `bearer ${token}`
+          Authorization: `bearer ${token}`,
         },
-      }).then((res) => console.log("res",res)).catch((error) => console.log("error",error)); 
+      })
+      .then((res) => toast.success(res.data.message))
+      .catch((error) => toast.error("مشکلی پیش آمده است"));
   };
   return (
     <form onChange={changeHandler} className={styles.form}>
