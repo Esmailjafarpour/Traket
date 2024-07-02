@@ -27,6 +27,45 @@
      font-size: 0.9rem;
 }
 
+.menu{
+     position: relative;
+}
+
+.menu div{
+     position: absolute;
+    top: 40px;
+   right: 0;
+    width: fit-content;
+    padding: 5px 20px;
+    background-color:#ffffff;
+    border-radius: 4px;
+    cursor: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu div ul li , .menu div span{
+     width: 150px;
+     list-style: none;
+     padding: 15px 5px;
+     border-bottom: 1px solid #ccc;
+     color: #ccc;
+     font-weight: 400;
+     font-size: .75rem;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+}
+.menu div ul li:last-child{
+     border-bottom: none;
+}
+
+.menu div ul li img , .menu div span img{
+     width: 15px;
+     color: #ccc !important; 
+     margin-left: 5px;
+}
+
 .button{
      background-color: #a62626;
      color: #fff;
