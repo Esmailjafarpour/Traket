@@ -3,13 +3,30 @@
      width: 200px;
 }
 
-.sidebar li {
+.sidebar h4{
      display: flex;
-     margin: 20px 0;
+     align-items: center;
 }
 
-.sidebar li p {
+.sidebar li , .sidebar div{
+     display: flex;
+     margin: 20px 0;
+     cursor: pointer;
+}
+
+.sidebar li p , .sidebar div p {
      font-weight: 200;
      margin-right: 10px;
      color: gray;
+}
+
+.sidebar div{
+     display: flex;
+     justify-content: flex-start;
+     align-items:center;
+}
+
+.sidebar svg{
+ font-size: 20px;
+ margin-left: 10px;
 }

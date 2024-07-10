@@ -7,7 +7,7 @@ import { getCookie } from "utils/cookie";
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const cookie = getCookie("accessToken");
-  console.log("cookie", cookie);
+  // console.log("cookie", cookie);
   return (
     <header className={styles.header}>
       <div>
